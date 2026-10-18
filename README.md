@@ -21,7 +21,7 @@ Voice typing for the Linux desktop:
 
 ## Features
 
-- Offline, on-device transcription powered by Whisper, Parakeet, Canary, and more. No data leaves your machine.
+- Offline, on-device transcription powered by Whisper, Parakeet, Canary, Moonshine, and more. No data leaves your machine.
 - Multiple activation options: click the in-app button, use a global keyboard shortcut, or control the app from the system tray.
 - Types the result directly into any focused application using Portals for wide desktop support (X11, Wayland).
 - Multi-language support with switchable primary and secondary languages on the fly.
@@ -58,7 +58,7 @@ Speed of Sound stands on the shoulders of these excellent open source projects:
 - [Java-GI](https://codeberg.org/java-gi/java-gi) — GTK/GNOME bindings for Java, enabling access to native libraries
   (including LibAdwaita and GStreamer) via the modern Panama framework.
 - [Sherpa ONNX](https://github.com/k2-fsa/sherpa-onnx) — On-device ASR (and more) using the performant ONNX Runtime,
-  with pre-built models for Whisper, Parakeet, Canary, and many other popular models.
+  with pre-built models for Whisper, Parakeet, Canary, Moonshine, and many other popular models.
 - [Whisper](https://github.com/openai/whisper) — OpenAI's open-source speech recognition model.
   Its release transformed the on-device ASR landscape.
 

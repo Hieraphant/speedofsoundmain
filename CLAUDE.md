@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 Speed of Sound is a voice-typing application for the Linux desktop.
-It captures microphone audio, transcribes it using ASR (locally via Sherpa ONNX — supports Whisper, Parakeet, and Canary model families),
+It captures microphone audio, transcribes it using ASR (locally via Sherpa ONNX — supports Whisper, Parakeet, Canary, and Moonshine model families),
 optionally polishes the text with an LLM (Anthropic/Google/OpenAI and compatible endpoints),
 and types the result into the active application via XDG Desktop Portal keyboard simulation.
 
@@ -42,7 +42,7 @@ Three Gradle modules with a shared convention plugin in `buildSrc/`:
 
 **Sample pipeline (orchestrated by `DefaultDirector`):**
 1. `JvmRecorder` — Captures PCM16 audio via `javax.sound.sampled`
-2. `SherpaOfflineAsr` — Transcribes audio using Sherpa ONNX (Whisper, Parakeet, Canary)
+2. `SherpaOfflineAsr` — Transcribes audio using Sherpa ONNX (Whisper, Parakeet, Canary, Moonshine)
 3. `LlmPlugin` — Polishes transcription (supports Anthropic, Google, OpenAI)
 
 **Director event flow:** `RecordingStarted` → `TranscriptionStarted` → `PolishingStarted` → `PipelineCompleted`
@@ -58,9 +58,9 @@ Desktop Portal via Stargate.
 
 ## Key Technical Details
 
-- **Kotlin 2.3.10**, JVM toolchain Java 25, Gradle 9.3.0 with Kotlin DSL
+- **Kotlin 2.3.10**, JVM toolchain Java 25, Gradle 9.4.1 with Kotlin DSL
 - **JVM flag required:** `--enable-native-access=ALL-UNNAMED` (for java-gi native bindings)
-- Sherpa ONNX JARs are local in `core/libs/` (x64 + aarch64, version 1.12.23)
+- Sherpa ONNX JARs are local in `core/libs/` (x64 + aarch64, version 1.13.2)
 - ASR models stored in `$XDG_DATA_HOME/speedofsound/models/` (or `~/.local/share/speedofsound/models/`)
 - Application ID: `io.speedofsound.SpeedOfSound`
 

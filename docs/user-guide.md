@@ -126,7 +126,9 @@ when configuring voice or text model providers.
 
 Configure the speech recognition provider used to transcribe your audio. By default, Speed of Sound transcribes
 locally using an on-device model (Whisper by default). Multiple model families are available, including
-Whisper, Parakeet, and Canary. You can also add cloud-based providers and select which one is active.
+Whisper, Parakeet, Canary, and Moonshine. Moonshine v2 models currently return empty text for utterances
+longer than about 9 seconds, pending an upstream sherpa-onnx fix. You can also add cloud-based providers
+and select which one is active.
 
 ### Text Models
 
