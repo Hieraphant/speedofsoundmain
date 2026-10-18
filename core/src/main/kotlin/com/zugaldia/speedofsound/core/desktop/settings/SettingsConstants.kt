@@ -4,6 +4,7 @@ import com.zugaldia.speedofsound.core.APPLICATION_SHORT
 import com.zugaldia.speedofsound.core.Language
 import com.zugaldia.speedofsound.core.plugins.asr.DEFAULT_ASR_SHERPA_WHISPER_MODEL_ID
 import com.zugaldia.speedofsound.core.plugins.asr.SUPPORTED_SHERPA_CANARY_ASR_MODELS
+import com.zugaldia.speedofsound.core.plugins.asr.SUPPORTED_SHERPA_MOONSHINE_ASR_MODELS
 import com.zugaldia.speedofsound.core.plugins.asr.SUPPORTED_SHERPA_PARAKEET_ASR_MODELS
 import com.zugaldia.speedofsound.core.plugins.asr.SUPPORTED_SHERPA_WHISPER_ASR_MODELS
 
@@ -53,7 +54,8 @@ const val DEFAULT_CREDENTIALS = "[]"
 // The ONNX provider is intentionally excluded as its current implementation is very limited
 // and only offers another Whisper variant.
 val SUPPORTED_LOCAL_ASR_MODELS =
-    SUPPORTED_SHERPA_WHISPER_ASR_MODELS + SUPPORTED_SHERPA_CANARY_ASR_MODELS + SUPPORTED_SHERPA_PARAKEET_ASR_MODELS
+    SUPPORTED_SHERPA_WHISPER_ASR_MODELS + SUPPORTED_SHERPA_CANARY_ASR_MODELS + SUPPORTED_SHERPA_PARAKEET_ASR_MODELS +
+        SUPPORTED_SHERPA_MOONSHINE_ASR_MODELS
 
 const val KEY_VOICE_MODEL_PROVIDERS = "voice-model-providers"
 const val DEFAULT_VOICE_MODEL_PROVIDERS = "[]"

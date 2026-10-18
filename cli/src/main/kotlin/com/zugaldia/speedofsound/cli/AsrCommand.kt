@@ -16,6 +16,8 @@ import com.zugaldia.speedofsound.core.plugins.asr.AsrPlugin
 import com.zugaldia.speedofsound.core.plugins.asr.AsrRequest
 import com.zugaldia.speedofsound.core.plugins.asr.SherpaCanaryAsr
 import com.zugaldia.speedofsound.core.plugins.asr.SherpaCanaryAsrOptions
+import com.zugaldia.speedofsound.core.plugins.asr.SherpaMoonshineAsr
+import com.zugaldia.speedofsound.core.plugins.asr.SherpaMoonshineAsrOptions
 import com.zugaldia.speedofsound.core.plugins.asr.SherpaParakeetAsr
 import com.zugaldia.speedofsound.core.plugins.asr.SherpaParakeetAsrOptions
 import com.zugaldia.speedofsound.core.plugins.asr.SherpaWhisperAsr
@@ -78,6 +80,8 @@ class AsrCommand : CliktCommand(name = "asr") {
                 when (voiceModel?.provider) {
                     AsrProvider.SHERPA_CANARY ->
                         SherpaCanaryAsr(SherpaCanaryAsrOptions(modelId = modelId, language = language))
+                    AsrProvider.SHERPA_MOONSHINE ->
+                        SherpaMoonshineAsr(SherpaMoonshineAsrOptions(modelId = modelId, language = language))
                     AsrProvider.SHERPA_PARAKEET ->
                         SherpaParakeetAsr(SherpaParakeetAsrOptions(modelId = modelId, language = language))
                     else ->

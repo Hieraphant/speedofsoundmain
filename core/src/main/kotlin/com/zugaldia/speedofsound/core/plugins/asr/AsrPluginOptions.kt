@@ -19,6 +19,7 @@ enum class AsrProvider(
 ) : SelectableProvider {
     OPENAI("OpenAI", isLocallyManaged = false),
     SHERPA_CANARY("Canary (Local)", isLocallyManaged = true),
+    SHERPA_MOONSHINE("Moonshine (Local)", isLocallyManaged = true),
     SHERPA_PARAKEET("Parakeet (Local)", isLocallyManaged = true),
     SHERPA_WHISPER("Whisper (Local)", isLocallyManaged = true);
 
@@ -47,6 +48,7 @@ interface AsrPluginOptions : AppPluginOptions {
 fun pluginIdForProvider(provider: AsrProvider): String = when (provider) {
     AsrProvider.OPENAI -> OpenAiAsr.ID
     AsrProvider.SHERPA_CANARY -> SherpaCanaryAsr.ID
+    AsrProvider.SHERPA_MOONSHINE -> SherpaMoonshineAsr.ID
     AsrProvider.SHERPA_PARAKEET -> SherpaParakeetAsr.ID
     AsrProvider.SHERPA_WHISPER -> SherpaWhisperAsr.ID
 }
@@ -61,6 +63,7 @@ fun getModelsForProvider(provider: AsrProvider): Map<String, VoiceModel> {
     return when (provider) {
         AsrProvider.OPENAI -> SUPPORTED_OPENAI_ASR_MODELS
         AsrProvider.SHERPA_CANARY -> SUPPORTED_SHERPA_CANARY_ASR_MODELS
+        AsrProvider.SHERPA_MOONSHINE -> SUPPORTED_SHERPA_MOONSHINE_ASR_MODELS
         AsrProvider.SHERPA_PARAKEET -> SUPPORTED_SHERPA_PARAKEET_ASR_MODELS
         AsrProvider.SHERPA_WHISPER -> SUPPORTED_SHERPA_WHISPER_ASR_MODELS
     }
